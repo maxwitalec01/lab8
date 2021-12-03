@@ -41,6 +41,9 @@ INSTALLED_APPS = [
     'shop',
     'search_app',
     'cart',
+    'stripe',
+    'order',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +63,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [str(BASE_DIR.joinpath('templates')),
                 str(BASE_DIR.joinpath('search_app','templates')),
-                str(BASE_DIR.joinpath('cart', 'templates'))],
+                str(BASE_DIR.joinpath('cart', 'templates')),
+                str(BASE_DIR.joinpath('accounts', 'templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -142,3 +146,6 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STRIPE_SECRET_KEY = 'sk_test_51K2PLYAkQaLgyytU6pnGNrhC0OIhY328EfoVPFRImdGEaVehjOajjCn7RZOZjfTgQCrp3jXhbZMX1ANZsglNyaYv00tILmTTcJ'
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51K2PLYAkQaLgyytU4blR4j4KzIfDTFguTY34N9ZCloz98TBNrNDEMl7rBtaZqQLhzNgo9rc07VwQZF4I3jlKUTlX00r42azZNa'
